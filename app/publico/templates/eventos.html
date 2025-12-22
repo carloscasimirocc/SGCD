@@ -1,0 +1,121 @@
+{% extends "base.html" %} {% block title %}Eventos - Decifer{% endblock %} {%
+block content %}
+<!-- HERO -->
+<section class="eventos__hero">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/eventos/slide1.jpg') }}"
+          alt="Casamento"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/eventos/slide2.jpg') }}"
+          alt="Aniversário"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/eventos/slide3.jpg') }}"
+          alt="Team Building"
+        />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="eventos__cards">
+  <div class="container">
+    <h2 class="section-title">Organize seu Evento</h2>
+    <p class="section-subtitle">
+      Espaços exclusivos para momentos inesquecíveis
+    </p>
+    <div class="cards-grid">
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/eventos/casamento.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Casamentos</h3>
+          <p>Cerimônias com vista para o mar</p>
+          <ul>
+            <li>Capacidade 300 pax</li>
+            <li>Decoração inclusa</li>
+            <li>Buffet premium</li>
+          </ul>
+          <a href="/contacto" class="btn btn--outline">Solicitar Orçamento</a>
+        </div>
+      </div>
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/eventos/aniversario.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Aniversários</h3>
+          <p>Festas temáticas para todas as idades</p>
+          <ul>
+            <li>Pacotes completos</li>
+            <li>Animação</li>
+            <li>Bolo personalizado</li>
+          </ul>
+          <a href="/contacto" class="btn btn--outline">Solicitar</a>
+        </div>
+      </div>
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/eventos/teambuilding.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Team Building</h3>
+          <p>Atividades desportivas para empresas</p>
+          <ul>
+            <li>Programas personalizados</li>
+            <li>Instrutores</li>
+            <li>Espaços exclusivos</li>
+          </ul>
+          <a href="/contacto" class="btn btn--outline">Solicitar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="eventos__galeria">
+  <div class="container">
+    <h2 class="section-title">Galeria</h2>
+    <div class="galeria-grid">
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/evento1.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/evento2.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/evento3.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/evento4.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/evento5.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/evento6.jpg') }}"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+{% endblock %} {% block scripts %} ... {% endblock %}

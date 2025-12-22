@@ -1,0 +1,81 @@
+// _login.scss
+@use 'sass:color';
+@use 'utils/variables' as *;
+
+.login {
+  background: transparent;
+
+  .bg-white { background: $white !important; }
+
+  .login__card {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  .label-wrapper {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $gray-900;
+    background: $white;
+    padding: 0 8px;
+    position: relative;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+  }
+
+  .form-control {
+    border: 2px solid #dee2e6;
+    border-radius: 0.75rem;
+    padding: 1rem 1rem 0.75rem;
+    background: $white;
+    z-index: 1;
+    margin-top: -12px;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.25rem rgba($primary, 0.2);
+    }
+  }
+
+  .form-check-label {
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .hover-underline {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: $primary;
+      transition: width 0.3s ease;
+    }
+    &:hover::after { width: 100%; }
+  }
+
+  .btn-primary:hover {
+    background: color.scale($primary, $lightness: -15%);
+    transform: translateY(-3px);
+  }
+}
+
+// DARK MODE
+body.dark-mode {
+  .login {
+    .bg-white { background: #1e1e1e !important; }
+    .label-wrapper { background: #1e1e1e; color: #e9ecef; }
+    .form-control { background: #2d2d2d; border-color: #495057; color: #f8f9fa; }
+    .text-muted { color: #adb5bd; }
+    .hover-underline:hover { color: $primary; }
+  }
+}

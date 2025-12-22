@@ -1,0 +1,6 @@
+@use 'utils/shared' as *;
+
+.desporto__hero { @include hero-slider; }
+.evento-card { @include card-base; }
+.evento-overlay { @include overlay-base; }
+.eventos-grid { @include grid-base; }

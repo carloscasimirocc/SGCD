@@ -1,0 +1,43 @@
+<div class="card mt-3">
+  <div class="card-header">Pagamentos Recentes</div>
+  <ul class="list-group list-group-flush">
+    {% for p in pagamentos_recentes %}
+    <li class="list-group-item">
+      {{ p.data.strftime('%d/%m/%Y') }} - {{ p.valor }} Kz
+    </li>
+    {% else %}
+    <li class="list-group-item text-muted">Nenhum pagamento registado.</li>
+    {% endfor %}
+  </ul>
+  <div class="card-footer text-end">
+    <a
+      href="{{ url_for('utilizadores.listar_pagamentos', id=current_user.id) }}"
+      class="btn btn-sm btn-primary"
+    >
+      Ver histórico completo
+    </a>
+  </div>
+</div>
+
+<div>
+  <h3>Histórico Unificado</h3>
+  <ul class="list-group mt-3">
+    {% for e in historico %}
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      <div>
+        <strong>{{ e.tipo }}</strong> — {{ e.descricao }} <br /><small
+          class="text-muted"
+          >{{ e.data.strftime('%d/%m/%Y') }}</small
+        >
+      </div>
+      {% if e.valor %}
+      <span class="badge bg-success">{{ e.valor }} Kz</span>
+      {% endif %}
+    </li>
+    {% else %}
+    <li class="list-group-item text-muted">Nenhum evento registado.</li>
+    {% endfor %}
+  </ul>
+</div>

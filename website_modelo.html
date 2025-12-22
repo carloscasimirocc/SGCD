@@ -1,0 +1,1055 @@
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Decifer Sport Resort - O paraíso do desporto e lazer em Luanda
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Custom CSS for elements that need more styling */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1543357480-c60d400e7f77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+      }
+
+      .modalidade-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .testimonial-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+      }
+
+      .event-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .map-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+
+      .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3"
+          >
+            DSR
+          </div>
+          <h1 class="text-xl font-bold text-blue-800">Decifer Sport Resort</h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a
+            href="#inicio"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Início</a
+          >
+          <a
+            href="#modalidades"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Modalidades</a
+          >
+          <a
+            href="#eventos"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Eventos</a
+          >
+          <a
+            href="#galeria"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Galeria</a
+          >
+          <a
+            href="#contactos"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Contactos</a
+          >
+        </nav>
+
+        <button id="mobile-menu-button" class="md:hidden text-blue-800">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white py-4 px-4 shadow-lg"
+      >
+        <div class="flex flex-col space-y-3">
+          <a
+            href="#inicio"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Início</a
+          >
+          <a
+            href="#modalidades"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Modalidades</a
+          >
+          <a
+            href="#eventos"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Eventos</a
+          >
+          <a
+            href="#galeria"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Galeria</a
+          >
+          <a
+            href="#contactos"
+            class="text-blue-800 hover:text-blue-600 font-medium"
+            >Contactos</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="hero flex items-center justify-center text-white pt-20"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Bem-vindo ao Decifer Sport Resort
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          O complexo desportivo que combina perfeição entre desporto e lazer no
+          coração de Luanda
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#modalidades"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300"
+            >Nossas Modalidades</a
+          >
+          <a
+            href="#contactos"
+            class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300"
+            >Contacte-nos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">
+              Sobre o Decifer Sport Resort
+            </h2>
+            <p class="text-gray-700 mb-4">
+              Localizado no prestigiado Lar do Patriota, em frente à Torre da
+              Epal, o Decifer Sport Resort é o destino perfeito para quem busca
+              excelência em desporto e lazer.
+            </p>
+            <p class="text-gray-700 mb-6">
+              Com instalações modernas e uma equipa profissional, oferecemos uma
+              experiência única que combina atividade física, relaxamento e
+              eventos memoráveis.
+            </p>
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-semibold">📍 Luanda, Angola</p>
+                <p class="text-sm text-gray-600">
+                  Lar do Patriota, em frente à Torre da Epal
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <div class="relative rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Decifer Sport Resort"
+                class="w-full h-auto"
+              />
+              <div class="absolute inset-0 bg-blue-800 opacity-20"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modalidades Section -->
+    <section id="modalidades" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-800 mb-4">
+            Nossas Modalidades
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Descubra as diversas atividades que oferecemos para todos os gostos
+            e idades
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Padel -->
+          <div
+            class="modalidade-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500 ease-in-out"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1631725998586-761a821d5f6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Padel"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-table-tennis-paddle-ball text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800">Padel</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Quadras modernas para praticar o desporto que está a conquistar
+                Angola. Aulas para iniciantes e torneios para os mais
+                experientes.
+              </p>
+              <a
+                href="#contactos"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Marcar aula <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Futebol -->
+          <div
+            class="modalidade-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500 ease-in-out"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1579952363872-3f086224e89c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Futebol"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-futbol text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800">Futebol</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Campos de futebol 7 e 11 com relva sintética de última geração.
+                Ideal para treinos, jogos amigáveis ou competições.
+              </p>
+              <a
+                href="#contactos"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Reservar campo <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Natação -->
+          <div
+            class="modalidade-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500 ease-in-out"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Natação"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-person-swimming text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800">Natação</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Piscina olímpica e piscina infantil com tratamento profissional
+                de água. Aulas para todas as idades e níveis de experiência.
+              </p>
+              <a
+                href="#contactos"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Saber horários <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Alojamento -->
+          <div
+            class="modalidade-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500 ease-in-out"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Alojamento"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-hotel text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800">Alojamento</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Suites e quartos confortáveis para atletas em competição ou
+                visitantes que desejam uma experiência completa no nosso resort.
+              </p>
+              <a
+                href="#contactos"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Ver disponibilidade <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Esplanada -->
+          <div
+            class="modalidade-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500 ease-in-out"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Esplanada"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-utensils text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800">Esplanada</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Ambiente agradável para relaxar após as atividades, com menu
+                variado de refeições saudáveis e bebidas refrescantes.
+              </p>
+              <a
+                href="#contactos"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Ver menu <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Eventos -->
+          <div
+            class="modalidade-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500 ease-in-out"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Eventos"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-calendar-check text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800">Eventos</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Espaços exclusivos para casamentos, aniversários e team
+                buildings. Organizamos tudo para que seu evento seja
+                inesquecível.
+              </p>
+              <a
+                href="#eventos"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Saber mais <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eventos Section -->
+    <section id="eventos" class="event-bg py-16 text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Organize seu Evento Conosco</h2>
+          <p class="max-w-2xl mx-auto">
+            Espaços exclusivos e serviços completos para tornar seu evento
+            especial
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Casamentos -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20"
+          >
+            <div class="flex items-center mb-4">
+              <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-ring text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Casamentos</h3>
+            </div>
+            <p class="mb-4">
+              Cerimónias românticas e receções memoráveis em nosso espaço
+              exclusivo com vista deslumbrante.
+            </p>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Capacidade até 300 convidados</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Decoração personalizada</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Buffet premium</span>
+              </li>
+            </ul>
+            <a
+              href="#contactos"
+              class="inline-block bg-white text-blue-800 font-medium py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300"
+              >Solicitar orçamento</a
+            >
+          </div>
+
+          <!-- Aniversários -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20"
+          >
+            <div class="flex items-center mb-4">
+              <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-birthday-cake text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Aniversários</h3>
+            </div>
+            <p class="mb-4">
+              Celebre sua data especial com atividades desportivas e diversão
+              para todas as idades.
+            </p>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Pacotes completos</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Atividades guiadas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Decoração temática</span>
+              </li>
+            </ul>
+            <a
+              href="#contactos"
+              class="inline-block bg-white text-blue-800 font-medium py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300"
+              >Solicitar orçamento</a
+            >
+          </div>
+
+          <!-- Team Building -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20"
+          >
+            <div class="flex items-center mb-4">
+              <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-users text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold">Team Building</h3>
+            </div>
+            <p class="mb-4">
+              Atividades desportivas e dinâmicas para fortalecer o espírito de
+              equipa da sua empresa.
+            </p>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Programas personalizados</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Instrutores especializados</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-green-300"></i>
+                <span>Espaços exclusivos</span>
+              </li>
+            </ul>
+            <a
+              href="#contactos"
+              class="inline-block bg-white text-blue-800 font-medium py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300"
+              >Solicitar orçamento</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-800 mb-4">Galeria</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Conheça nossas instalações e momentos especiais
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="overflow-hidden rounded-lg shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Piscina"
+              class="w-full h-64 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1493&q=80"
+              alt="Quadra de Padel"
+              class="w-full h-64 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1543357480-c60d400e7f77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Campo de Futebol"
+              class="w-full h-64 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Evento"
+              class="w-full h-64 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Alojamento"
+              class="w-full h-64 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Esplanada"
+              class="w-full h-64 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <button
+            id="view-more-btn"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300"
+          >
+            Ver Mais Fotos
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-800 mb-4">
+            O Que Dizem Nossos Clientes
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Depoimentos de quem já viveu a experiência Decifer
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Maria Silva"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Maria Silva</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700">
+              "Organizei o casamento da minha filha no Decifer e foi perfeito! O
+              espaço, a comida, a equipe - tudo impecável. Recomendo a todos!"
+            </p>
+          </div>
+
+          <div class="testimonial-card p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="João Mendes"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">João Mendes</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700">
+              "As quadras de padel são as melhores de Luanda! Jogo aqui toda
+              semana com meus amigos e a qualidade é incomparável."
+            </p>
+          </div>
+
+          <div class="testimonial-card p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Ana Kiala"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Ana Kiala</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700">
+              "Meu filho faz aulas de natação no Decifer e os professores são
+              excelentes. Em poucos meses já notei uma grande evolução!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contactos" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row">
+          <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">
+              Entre em Contacto
+            </h2>
+            <p class="text-gray-700 mb-6">
+              Tem dúvidas, quer fazer uma reserva ou solicitar um orçamento?
+              Preencha o formulário ou contacte-nos diretamente.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-map-marker-alt text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Endereço</h4>
+                  <p class="text-gray-600">
+                    Lar do Patriota, em frente à Torre da Epal, Luanda, Angola
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-phone-alt text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Telefone</h4>
+                  <p class="text-gray-600">+244 923 456 789</p>
+                  <p class="text-gray-600">+244 945 678 901</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-envelope text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Email</h4>
+                  <p class="text-gray-600">info@decifersportresort.com</p>
+                  <p class="text-gray-600">reservas@decifersportresort.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-clock text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Horário</h4>
+                  <p class="text-gray-600">Segunda a Sexta: 6h00 - 22h00</p>
+                  <p class="text-gray-600">Sábado e Domingo: 7h00 - 20h00</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-money-bill-wave text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Pagamentos</h4>
+                  <p class="text-gray-600">
+                    Aceitamos: Multicaixa, Express, Transferência Bancária
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <form class="bg-gray-50 p-6 rounded-xl shadow-md">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Nome Completo</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-medium mb-2"
+                  >Telefone</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="subject"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Assunto</label
+                >
+                <select
+                  id="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">Selecione um assunto</option>
+                  <option value="reserva">Reserva de Espaço</option>
+                  <option value="evento">Organização de Evento</option>
+                  <option value="aula">Aula Particular</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Mensagem</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+              >
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-gray-100">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">
+          Como Chegar
+        </h2>
+        <div class="map-container rounded-xl shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.244193308143!2d13.23441531537181!3d-8.99886419351439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNTUuOSJTIDEzwrAxNCcxOS4wIkU!5e0!3m2!1sen!2sao!4v1620000000000!5m2!1sen!2sao"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <div
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-900 font-bold text-lg mr-2"
+              >
+                DSR
+              </div>
+              <h3 class="text-xl font-bold">Decifer Sport Resort</h3>
+            </div>
+            <p class="mb-4">
+              O complexo desportivo que combina perfeição entre desporto e lazer
+              no coração de Luanda.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-white hover:text-blue-300"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white hover:text-blue-300"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white hover:text-blue-300"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white hover:text-blue-300"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#inicio"
+                  class="hover:text-blue-300 transition duration-300"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#modalidades"
+                  class="hover:text-blue-300 transition duration-300"
+                  >Modalidades</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#eventos"
+                  class="hover:text-blue-300 transition duration-300"
+                  >Eventos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#galeria"
+                  class="hover:text-blue-300 transition duration-300"
+                  >Galeria</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contactos"
+                  class="hover:text-blue-300 transition duration-300"
+                  >Contactos</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Modalidades</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-blue-300 transition duration-300"
+                  >Padel</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-blue-300 transition duration-300"
+                  >Futebol</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-blue-300 transition duration-300"
+                  >Natação</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-blue-300 transition duration-300"
+                  >Alojamento</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-blue-300 transition duration-300"
+                  >Esplanada</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+            <p class="mb-4">
+              Inscreva-se para receber nossas novidades e promoções.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Seu email"
+                class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800"
+              />
+              <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="border-t border-blue-800 mt-8 pt-6 text-center">
+          <p>&copy; 2023 Decifer Sport Resort. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300 hidden"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Back to Top Button
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("hidden");
+        } else {
+          backToTopButton.classList.add("hidden");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // View More Photos Button
+      const viewMoreBtn = document.getElementById("view-more-btn");
+
+      viewMoreBtn.addEventListener("click", () => {
+        alert("Em breve mais fotos estarão disponíveis!");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

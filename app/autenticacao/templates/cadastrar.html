@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% block title %}Cadastrar - Decifer{% endblock %} {%
+block content %}
+
+<section
+  class="d-flex align-items-center justify-content-center vh-100 bg-light"
+>
+  <div
+    class="card shadow-xl border-0 rounded-4"
+    style="max-width: 420px; width: 100%"
+  >
+    <div class="card-body p-5">
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold">Criar Conta</h2>
+        <p class="text-muted small">Preencha seus dados para se cadastrar</p>
+      </div>
+
+      <!-- FLASH MESSAGES -->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, msg in messages %}
+      <div
+        class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show"
+      >
+        {{ msg }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <form method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+          {{ form.nome(class="form-control form-control-lg rounded-3",
+          placeholder="Nome") }} {% for erro in form.nome.errors %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="mb-3">
+          {{ form.sobrenome(class="form-control form-control-lg rounded-3",
+          placeholder="Sobrenome") }} {% for erro in form.sobrenome.errors %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="mb-3">
+          {{ form.email(class="form-control form-control-lg rounded-3",
+          placeholder="Email") }} {% for erro in form.email.errors %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="mb-3">
+          {{ form.senha(class="form-control form-control-lg rounded-3",
+          type="password", placeholder="Senha") }} {% for erro in
+          form.senha.errors %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="mb-3">
+          {{ form.confirmar_senha(class="form-control form-control-lg
+          rounded-3", type="password", placeholder="Confirmar senha") }} {% for
+          erro in form.confirmar_senha.errors %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="mb-3">
+          {{ form.data_nascimento(class="form-control form-control-lg
+          rounded-3", type="date", placeholder="Data de nascimento") }} {% for
+          erro in form.data_nascimento.errors %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="mb-4">
+          {{ form.telefone(class="form-control form-control-lg rounded-3",
+          placeholder="(XX) XXXXX-XXXX") }} {% for erro in form.telefone.errors
+          %}
+          <small class="text-danger d-block mt-1">{{ erro }}</small>
+          {% endfor %}
+        </div>
+
+        <div class="d-grid">
+          {{ form.enviar(class="btn btn-primary btn-lg rounded-3 fw-bold
+          text-uppercase") }}
+        </div>
+      </form>
+
+      <div class="text-center mt-4">
+        <p class="text-muted small mb-0">
+          Já tem uma conta?
+          <a
+            href="{{ url_for('autenticacao.login') }}"
+            class="text-primary fw-semibold"
+          >
+            Entrar
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

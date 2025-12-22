@@ -1,0 +1,39 @@
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
+
+.btn {
+  @include button($primary);
+
+  &--success { @include button($success); }
+  &--danger  { @include button($danger); }
+  &--warning { @include button($warning); }
+
+  &--small {
+    padding: $spacing-unit * 0.5 $spacing-unit;
+    font-size: 0.875rem;
+  }
+
+  &--large {
+    padding: $spacing-unit $spacing-unit * 2;
+    font-size: 1.125rem;
+  }
+}
+
+
+.btn-login {
+  background: #3d2b1f;
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: #493c31;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+}

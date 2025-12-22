@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cancelar Inscrição</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='bootstrap.min.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h4>Utilizador logado: {{ user.nome }} ({{ user.perfil.value }})</h4>
+      <h2>Cancelar Inscrição</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, msg in messages %}
+      <div
+        class="alert alert-{{ category }} alert-dismissible fade show"
+        role="alert"
+      >
+        {{ msg }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          {{ form.inscricao_id.label(class_="form-label") }} {{
+          form.inscricao_id(class_="form-control") }}
+        </div>
+        {{ form.submit(class_="btn btn-danger") }}
+      </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

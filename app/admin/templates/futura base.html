@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Painel Admin{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='admin/css/admin.css') }}"
+    />
+    <!-- Adicione outros links de CSS ou scripts aqui -->
+  </head>
+  <body>
+    <header>
+      <h1>Painel Administrativo</h1>
+      <nav>
+        <a href="{{ url_for('administrador.listar_utilizadores') }}"
+          >Utilizadores</a
+        >
+        <!-- Adicione outros links do admin aqui -->
+        <a href="{{ url_for('autenticacao.logout') }}">Sair</a>
+      </nav>
+      <hr />
+    </header>
+    <main>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %} {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <hr />
+      <small>&copy; {{ current_year or 2025 }} - Seu Sistema</small>
+    </footer>
+  </body>
+</html>

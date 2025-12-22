@@ -1,0 +1,99 @@
+// base/_base.scss
+
+@use 'sass:color';
+@use 'utils/variables' as *;
+
+// ====================================
+// ESTILOS BASE DO BODY (CLARO)
+// ====================================
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: $header-height;
+}
+
+main {
+  flex: 1 0 auto;   // ← CRESCE PARA PREENCHER
+}
+
+.footer {
+  flex-shrink: 0;
+  margin-top: auto; // ← FORÇA PARA O FUNDO
+}
+
+.dark-mode {
+  .desporto__eventos {
+    .evento-card {
+      background: rgba(30, 30, 30, 0.9);
+      color: $dark-text;
+      h3, p { color: $dark-text; }
+      ul li { color: $dark-success; }
+    }
+  }
+
+  .desporto__galeria img {
+    filter: brightness(0.8);
+  }
+}
+
+// ====================================
+// DARK MODE (SEU CÓDIGO)
+// ====================================
+body.dark-mode {
+  .evento-card .evento-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  }
+
+  .desporto__galeria img {
+    filter: brightness(0.8);
+  }
+
+
+  // HEADER
+  .header {
+    background: $dark-surface;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  // MENU (AQUI!)
+  .header__nav a {
+    color: $dark-text !important;     // ← CINZA CLARO
+    &:hover { color: $dark-primary; } // ← AZUL CLARO
+  }
+
+  .header__logo-img {
+    filter: brightness(0.9);
+  }
+
+  // BUSCA
+  .header__search input {
+    background: $dark-surface;
+    border-color: $dark-muted;
+    color: $dark-text;
+
+    &:focus {
+      border-color: $dark-primary;
+      box-shadow: 0 0 0 3px rgba($dark-primary, 0.2);
+    }
+  }
+
+  // BOTÃO ENTRAR
+  .btn-login {
+    background: #5d4037;
+    &:hover { background: #6d4c41; }
+  }
+
+  // FOOTER
+  .footer {
+    background: $dark-surface;
+    color: $dark-muted;
+    a { color: $dark-muted; &:hover { color: $dark-primary; } }
+  }
+}

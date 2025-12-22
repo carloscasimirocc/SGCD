@@ -1,0 +1,8 @@
+// static/scss/pages/_restaurante.scss
+
+@use 'utils/shared' as *;
+
+.restaurante__hero { @include hero-slider; }
+.card-item { @include card-base; }
+.card-overlay { @include overlay-base; }
+.cards-grid { @include grid-base; }

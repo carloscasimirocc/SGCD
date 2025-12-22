@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Decifer{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('publico.static', filename='css/main.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('publico.static', filename='imagens/favicon.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% include 'partials/_header.html' %}
+
+    <main>
+      <!-- FLASH MESSAGES (ACIMA DO CONTEÚDO) -->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <div class="container mt-4">
+        {% for category, message in messages %}
+        <div
+          class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show shadow-sm"
+          role="alert"
+        >
+          <i
+            class="fas fa-{{ 'check-circle' if category == 'success' else 'exclamation-triangle' }} me-2"
+          ></i>
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Fechar"
+          ></button>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+
+      <!-- CONTEÚDO DAS PÁGINAS -->
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include 'partials/_footer.html' %}
+
+    <script src="{{ url_for('publico.static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

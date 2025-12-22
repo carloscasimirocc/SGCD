@@ -1,0 +1,148 @@
+{% extends "base.html" %} {% block title %}Desporto - Decifer{% endblock %} {%
+block content %}
+<!-- HERO SLIDER -->
+<section class="desporto__hero">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/desporto/slide1.jpg') }}"
+          alt="Piscina"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/desporto/slide2.jpg') }}"
+          alt="Ginásio"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/desporto/slide3.jpg') }}"
+          alt="Campo"
+        />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- 3 BLOCOS DE EVENTOS -->
+<!-- 3 BLOCOS DE EVENTOS -->
+<section class="desporto__eventos">
+  <div class="container">
+    <h2 class="section-title">Organize seu Evento Connosco</h2>
+    <p class="section-subtitle">
+      Espaços exclusivos e serviços completos para tornar seu evento especial
+    </p>
+
+    <div class="eventos-grid">
+      <!-- CASAMENTOS -->
+      <div
+        class="evento-card"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/eventos/casamento.jpg') }}')"
+      >
+        <div class="evento-overlay">
+          <h3>Casamentos</h3>
+          <p>Cerimônias românticas com vista deslumbrante</p>
+          <ul>
+            <li>Até 300 convidados</li>
+            <li>Decoração personalizada</li>
+            <li>Buffet premium</li>
+          </ul>
+          <a href="#" class="btn btn--outline">Solicitar orçamento</a>
+        </div>
+      </div>
+
+      <!-- ANIVERSÁRIOS -->
+      <div
+        class="evento-card"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/eventos/aniversario.jpg') }}')"
+      >
+        <div class="evento-overlay">
+          <h3>Aniversários</h3>
+          <p>Festa com actividades desportivas e diversão</p>
+          <ul>
+            <li>Pacotes completos</li>
+            <li>Decoração temática</li>
+            <li>Actividades guiadas</li>
+          </ul>
+          <a href="#" class="btn btn--outline">Solicitar orçamento</a>
+        </div>
+      </div>
+
+      <!-- TEAM BUILDING -->
+      <div
+        class="evento-card"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/eventos/teambuilding.jpg') }}')"
+      >
+        <div class="evento-overlay">
+          <h3>Team Building</h3>
+          <p>Fortaleça a equipa com desporto e dinâmica</p>
+          <ul>
+            <li>Programas personalizados</li>
+            <li>Instrutores especializados</li>
+            <li>Espaços exclusivos</li>
+          </ul>
+          <a href="#" class="btn btn--outline">Solicitar orçamento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<!-- GALERIA -->
+<section class="desporto__galeria">
+  <div class="container">
+    <h2 class="section-title">Galeria</h2>
+    <div class="galeria-grid">
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/img1.jpg') }}"
+        alt="Galeria 1"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/img2.jpg') }}"
+        alt="Galeria 2"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/img3.jpg') }}"
+        alt="Galeria 3"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/img4.jpg') }}"
+        alt="Galeria 4"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/img5.jpg') }}"
+        alt="Galeria 5"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/img6.jpg') }}"
+        alt="Galeria 6"
+      />
+    </div>
+  </div>
+</section>
+{% endblock %} {% block scripts %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".swiper", {
+      loop: true,
+      autoplay: { delay: 5000 },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- HEADER -->
+<header class="header">
+  <div class="header__container">
+    <!-- LOGO -->
+    <a href="/" class="header__logo">
+      <img
+        src="{{ url_for('publico.static', filename='imagens/Decifer.png') }}"
+        alt="Decifer"
+        class="header__logo-img"
+      />
+    </a>
+
+    <!-- MENU -->
+    <nav class="header__nav">
+      <ul>
+        <li><a href="{{ url_for('publico.desporto') }}">Desporto</a></li>
+        <li><a href="{{ url_for('publico.restaurante') }}">Restaurante</a></li>
+        <li><a href="{{ url_for('publico.hotel') }}">Hotel</a></li>
+        <li><a href="{{ url_for('publico.eventos') }}">Eventos</a></li>
+        <li><a href="{{ url_for('publico.contactos') }}">Contactos</a></li>
+      </ul>
+    </nav>
+
+    <!-- BUSCA + ÍCONES -->
+    <div class="header__icons">
+      <div class="header__search">
+        <input type="search" placeholder="O que você procura?" />
+      </div>
+      <a href="{{ url_for('autenticacao.login') }}" class="btn-login">Entrar</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>

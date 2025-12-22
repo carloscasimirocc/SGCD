@@ -1,0 +1,39 @@
+// _contactos.scss
+@use 'sass:math';
+@use 'sass:color';
+@use 'utils/shared' as *;
+@use 'utils/variables' as *;
+
+.header-logado {
+  z-index: 1030;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.95) !important;
+}
+
+.sidebar {
+  width: 280px;
+  background: #fff;
+  border-right: 1px solid #e9ecef;
+  top: 76px;
+  height: calc(100vh - 76px);
+  position: fixed;
+  z-index: 1020;
+
+  .nav-link {
+    transition: all 0.2s ease;
+    &:hover { background: #f8f9fa; }
+    &.active { font-weight: 600; }
+  }
+}
+
+.main-content {
+  margin-left: 280px;
+  margin-top: 76px;
+  min-height: calc(100vh - 76px);
+  background: #f8f9fa;
+}
+
+@media (max-width: 992px) {
+  .sidebar, .main-content { margin-left: 0 !important; }
+  .main-content { margin-top: 76px; }
+}

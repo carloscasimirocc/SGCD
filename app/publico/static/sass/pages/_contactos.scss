@@ -1,0 +1,106 @@
+// _contactos.scss
+@use 'sass:math';
+@use 'sass:color';
+@use 'utils/shared' as *;
+@use 'utils/variables' as *;
+
+
+.contactos {
+  background: transparent; /* REMOVE BARRA BRANCA */
+  min-height: 100vh;
+  padding: 0 !important;
+
+  .bg-white {
+    background: $white !important;
+  }
+
+  /* ALINHAMENTO PERFEITO DAS LABELS */
+  .label-wrapper {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $gray-900;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+    background: $white;
+    padding: 0 4px;
+    position: relative;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+  }
+
+  .form-control {
+    border: 2px solid #dee2e6;
+    border-radius: 0.75rem;
+    padding: 1rem 1rem 0.75rem;
+    font-size: 1rem;
+    position: relative;
+    background: $white;
+    z-index: 1;
+    margin-top: -12px;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.25rem rgba($primary, 0.2);
+      z-index: 3;
+    }
+
+    &::placeholder {
+      color: #adb5bd;
+      font-style: italic;
+    }
+  }
+
+  /* CARD COM BORDA SUAVE */
+  .contactos__card {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  .btn-primary {
+    background: $primary;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: color.scale($primary, $lightness: -15%);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba($primary, 0.4);
+    }
+  }
+
+  /* MOBILE */
+  @media (max-width: 992px) {
+    .bg-white {
+      min-height: 100vh;
+      padding: 2rem 1rem !important;
+    }
+    .row.g-0 {
+      margin: 0;
+    }
+  }
+}
+
+/* DARK MODE */
+body.dark-mode {
+  .contactos {
+    .bg-white { background: #1e1e1e !important; }
+    .label-wrapper { color: #e9ecef; background: #1e1e1e; }
+    .form-control {
+      background: #2d2d2d;
+      border-color: #495057;
+      color: #f8f9fa;
+      &::placeholder { color: #6c757d; }
+    }
+    .contactos__card { box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+  }
+}

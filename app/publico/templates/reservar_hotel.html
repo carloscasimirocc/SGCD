@@ -1,0 +1,81 @@
+{% extends "base_publico.html" %} {% block title %}Reservar Quarto | DECIFER{%
+endblock %} {% block conteudo %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">Reservar Quarto - Hotel DECIFER</h2>
+
+  {% if current_user.is_authenticated %}
+  <p>Preencha o formulário abaixo para solicitar uma reserva. (Placeholder)</p>
+  <form method="post" action="{{ url_for('publico.reservar_hotel') }}">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          value="{{ current_user.email }}"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="checkin">Check-in</label>
+        <input
+          type="date"
+          class="form-control"
+          id="checkin"
+          name="checkin"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="checkout">Check-out</label>
+        <input
+          type="date"
+          class="form-control"
+          id="checkout"
+          name="checkout"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pessoas">Número de pessoas</label>
+      <input
+        type="number"
+        class="form-control"
+        id="pessoas"
+        name="pessoas"
+        min="1"
+        value="1"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Enviar pedido de reserva
+    </button>
+  </form>
+  {% else %}
+  <div class="alert alert-info">
+    Para reservar um quarto é necessário iniciar sessão.
+    <a
+      href="{{ url_for('autenticacao.login', next=request.path) }}"
+      class="btn btn-sm btn-primary ml-2"
+      >Iniciar sessão</a
+    >
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

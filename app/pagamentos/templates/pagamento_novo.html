@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-4">
+  <h2>Registrar pagamento para {{ utilizador.nome }}</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.tipo_servico.label(class="form-label") }} {{
+      form.tipo_servico(class="form-select") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.valor.label(class="form-label") }} {{
+      form.valor(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.metodo_pagamento.label(class="form-label") }} {{
+      form.metodo_pagamento(class="form-select") }}
+    </div>
+    x
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+</div>
+{% endblock %}

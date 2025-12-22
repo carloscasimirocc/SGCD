@@ -1,0 +1,146 @@
+{% extends "base.html" %} {% block title %}Restaurante - Decifer{% endblock %}
+{% block content %}
+<!-- HERO SLIDER -->
+<section class="restaurante__hero">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/restaurante/slide1.jpg') }}"
+          alt="Prato gourmet"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/restaurante/slide2.jpg') }}"
+          alt="Jantar à luz de velas"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/restaurante/slide3.jpg') }}"
+          alt="Buffet"
+        />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- 3 CARDS -->
+<section class="restaurante__cards">
+  <div class="container">
+    <h2 class="section-title">Sabores Únicos</h2>
+    <p class="section-subtitle">
+      Experiências gastronómicas para todos os gostos
+    </p>
+
+    <div class="cards-grid">
+      <!-- INSCRIÇÃO ESCOLA DE FUTEBOL -->
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/restaurante/card1.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Menu Executivo</h3>
+          <p>Refeições rápidas e sofisticadas para o almoço de negócios</p>
+          <ul>
+            <li>Pratos do dia</li>
+            <li>Opções vegetarianas</li>
+            <li>Sobremesas artesanais</li>
+          </ul>
+          <a href="/reserva" class="btn btn--outline">Reservar Mesa</a>
+        </div>
+      </div>
+
+      <!-- NATAÇÃO -->
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/restaurante/card2.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Jantar Romântico</h3>
+          <p>Noites especiais com vista para o mar</p>
+          <ul>
+            <li>Menu degustação 5 pratos</li>
+            <li>Vinhos selecionados</li>
+            <li>Música ao vivo</li>
+          </ul>
+          <a href="/reserva" class="btn btn--outline">Reservar</a>
+        </div>
+      </div>
+
+      <!-- PADEL -->
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/restaurante/card3.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Brunch de Domingo</h3>
+          <p>Domingo em família com buffet completo</p>
+          <ul>
+            <li>Estação de ovos</li>
+            <li>Frutas frescas</li>
+            <li>Cocktails inclusos</li>
+          </ul>
+          <a href="/reserva" class="btn btn--outline">Reservar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="restaurante__galeria">
+  <div class="container">
+    <h2 class="section-title">Galeria</h2>
+    <div class="galeria-grid">
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/rest1.jpg') }}"
+        alt="Prato 1"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/rest2.jpg') }}"
+        alt="Prato 2"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/rest3.jpg') }}"
+        alt="Prato 3"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/rest4.jpg') }}"
+        alt="Prato 4"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/rest5.jpg') }}"
+        alt="Prato 5"
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/rest6.jpg') }}"
+        alt="Prato 6"
+      />
+    </div>
+  </div>
+</section>
+{% endblock %} {% block scripts %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".swiper", {
+      loop: true,
+      autoplay: { delay: 5000 },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
+{% endblock %}

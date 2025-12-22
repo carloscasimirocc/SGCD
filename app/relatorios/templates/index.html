@@ -1,0 +1,28 @@
+{% extends "base_dashboard.html" %} {% block dashboard_content %}
+<div class="row g-4">
+  <div class="col-12">
+    <div class="card border-0 shadow-lg rounded-4">
+      <div class="card-body p-5 text-center bg-white">
+        <h1 class="text-success mb-4">DASHBOARD 100% PERFEITO!</h1>
+        <p class="lead text-dark">Tudo exatamente como combinamos:</p>
+        <ul class="list-unstyled text-start mt-4 fs-5">
+          <li>Campo de busca removido</li>
+          <li>Botão "Entrar" → "Olá, João! + Sair"</li>
+          <li>Menu sem Contactos</li>
+          <li>Sair só no header</li>
+          <li>Sidebar limpa e profissional</li>
+          <li>Responsivo no mobile</li>
+        </ul>
+        <div class="mt-5">
+          <a
+            href="{{ url_for('publico.index') }}"
+            class="btn btn-primary btn-lg px-5 me-3"
+          >
+            Voltar ao Site
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SGCD | Decifer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('publico.static', filename='css/main.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('publico.static', filename='imagens/favicon.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- FONTE INTER (Graphik-like) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+  </head>
+  <body>
+
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header__container">
+    <!-- LOGO -->
+    <a href="/" class="header__logo">
+      <img src="{{ url_for('publico.static', filename='imagens/Decifer.png') }}"
+           alt="Decifer" class="header__logo-img">
+    </a>
+
+    <!-- MENU -->
+    <nav class="header__nav">
+      <ul>
+        <li><a href="#">Desporto</a></li>
+        <li><a href="#">Restaurante</a></li>
+        <li><a href="#">Hotel</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Contactos</a></li>
+      </ul>
+    </nav>
+
+    <!-- BUSCA + ÍCONES -->
+    <div class="header__icons">
+      <div class="header__search">
+        <input type="search" placeholder="O que você procura?">
+      </div>
+      <a href="" class="btn-login">Entrar</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container home">
+      <div class="home__hero">
+        <h1>Bem-vindo ao SGCD</h1>
+        <p style="color: black;"></p>
+        <button class="btn btn--large">Começar Agora</button>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <div class="card__title">Relatórios</div>
+            <div class="card__body">Acesse dados em tempo real.</div>
+            <div class="card__footer">
+              <button class="btn btn--small btn--success">Ver</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__line">
+          <!-- ESQUERDA: REDES SOCIAIS -->
+          <div class="footer__left">
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="footer__social-link" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="footer__social-link" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="footer__social-link" aria-label="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="#" class="footer__social-link" aria-label="Pinterest"
+                ><i class="fab fa-pinterest"></i
+              ></a>
+              <a href="#" class="footer__social-link" aria-label="X"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a href="#" class="footer__social-link" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- CENTRO: COPYRIGHT -->
+          <div class="footer__center" class="footer__copyright">
+            © 2025 Complexo Desportivo -> DECIFER
+          </div>
+
+            <!-- DIREITA: LINKS -->
+
+            <div class="footer__right">
+              <div class="footer__links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Contato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- JS -->
+    <script src="{{ url_for('publico.static', filename='js/main.js') }}"></script>
+  </body>
+</html>

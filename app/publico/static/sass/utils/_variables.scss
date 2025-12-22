@@ -1,0 +1,37 @@
+// Cores
+$primary: #007bff;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$dark: #343a40;
+$light: #f8f9fa;
+$gray-100: #f8f9fa;
+$gray-600: #6c757d;
+$gray-900: #212529;
+$white: #ffffff;
+
+// Variáveis Mode Dark
+$dark-bg: #121212;
+$dark-surface: #1e1e1e;
+$dark-text: #e6e2e2;
+$dark-muted: #aaaaaa;
+$dark-primary: #4d9eff;
+$dark-success: #0c4b31;
+
+
+// Tipografia
+$font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-heading: 'Inter', sans-serif;
+$font-size-base: 1rem;
+$line-height: 1.6;
+
+
+// Layout
+$container-max-width: 1200px;
+$border-radius: 8px;
+$spacing-unit: 1rem;
+
+// === ALTURAS (ADICIONA AQUI) ===
+$header-height: 80px;        // ← NOVA VARIÁVEL!
+$footer-height: 200px;       // ← (opcional, se usar no footer)
+$promo-height: 40px;         // ← (opcional, para o banner Black Friday)

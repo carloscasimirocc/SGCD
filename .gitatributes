@@ -1,0 +1,8 @@
+# Garantir LF em todos os arquivos de texto
+* text=auto eol=lf
+
+# Exemplos específicos
+*.css text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.py text eol=lf

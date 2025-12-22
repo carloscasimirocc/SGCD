@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Relatórios Financeiros</h2>
+
+  <!-- Estatísticas resumidas -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm p-3">
+        <h5>Total de Pagamentos</h5>
+        <h4 class="text-success">{{ resumo.total_pagamentos }} Kz</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm p-3">
+        <h5>Média Mensal</h5>
+        <h4 class="text-primary">{{ resumo.media_mensal }} Kz</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm p-3">
+        <h5>Total de Inscrições</h5>
+        <h4 class="text-info">{{ resumo.total_inscricoes }}</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm p-3">
+        <h5>Total de Alunos</h5>
+        <h4 class="text-secondary">{{ resumo.total_alunos }}</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gráfico de Pagamentos -->
+  <div class="card shadow-sm p-4">
+    <h5 class="mb-3">Pagamentos Mensais</h5>
+    <canvas id="graficoPagamentos" height="120"></canvas>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById("graficoPagamentos").getContext("2d");
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: JSON.parse("{{ labels | tojson | escapejs }}"),
+      datasets: [
+        {
+          label: "Total de Pagamentos (Kz)",
+          data: JSON.parse("{{ valores | tojson | escapejs }}"),
+          backgroundColor: "rgba(54, 162, 235, 0.6)",
+          borderColor: "rgba(54, 162, 235, 1)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+</script>
+{% endblock %}

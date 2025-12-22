@@ -1,0 +1,13 @@
+{
+  "name": "sgcd",
+  "version": "1.0.0",
+  "description": "SGCD com Sass + Flask",
+  "main": "index.js",
+  "scripts": {
+  "sass": "sass --watch --load-path=app/publico/static/sass app/publico/static/sass:app/publico/static/css --style=compressed"
+
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

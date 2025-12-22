@@ -1,0 +1,22 @@
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
+
+.card {
+  @include card;
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-unit * 0.75;
+    color: $primary;
+  }
+
+  &__body {
+    margin-bottom: $spacing-unit;
+  }
+
+  &__footer {
+    display: flex;
+    gap: $spacing-unit * 0.5;
+    margin-top: $spacing-unit;
+  }
+}

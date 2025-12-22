@@ -1,0 +1,85 @@
+@use 'utils/variables' as *;
+
+.footer {
+  background: $white;
+  border-top: 1px solid $gray-600;
+  padding: 1.5rem 0;           // ← ALTURA IDEAL
+  font-size: 0.9rem;
+  color: $gray-900;
+
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+}
+
+.footer__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer__left,
+.footer__center,
+.footer__right {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__social-link {
+  color: $gray-600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.footer__copyright {
+  color: $gray-600;
+  font-size: 0.85rem;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  a {
+    color: $gray-900;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+}
+
+// RESPONSIVO
+@media (max-width: 768px) {
+  .footer__line {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__left,
+  .footer__center,
+  .footer__right {
+    min-width: 100%;
+  }
+}

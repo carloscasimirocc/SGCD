@@ -1,0 +1,31 @@
+@mixin hero-slider {
+  margin-bottom: 3rem;
+  .swiper { /* estilos */ }
+}
+
+@mixin card-base {
+  position: relative;
+  height: 450px;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+@mixin overlay-base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 2rem 1.5rem;
+}
+
+@mixin grid-base {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}

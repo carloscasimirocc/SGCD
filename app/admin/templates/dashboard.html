@@ -1,0 +1,56 @@
+<!-- Dentro do sidebar ou navbar -->
+<li class="nav-item">
+  <a class="nav-link" href="{{ url_for('relatorios.dashboard') }}">
+    <i class="bi bi-bar-chart"></i> Relatórios Financeiros
+  </a>
+</li>
+
+{% extends "base.html" %} {% block content %}
+<div class="container mt-4">
+  <h2>Painel do Administrador</h2>
+  <p class="text-muted">Período: {{ inicio }} — {{ fim }}</p>
+
+  <!-- CARD DE RESUMO FINANCEIRO -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>Total</h6>
+          <h4 class="text-success">{{ resumo.total | round(2) }} Kz</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>Média</h6>
+          <h4>{{ resumo.media | round(2) }} Kz</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>Maior Pagamento</h6>
+          <h4>{{ resumo.maior | round(2) }} Kz</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>Menor Pagamento</h6>
+          <h4>{{ resumo.menor | round(2) }} Kz</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINK PARA RELATÓRIOS DETALHADOS -->
+  <div class="text-end">
+    <a href="{{ url_for('relatorios.dashboard') }}" class="btn btn-primary">
+      Ver Relatórios Detalhados
+    </a>
+  </div>
+</div>
+{% endblock %}

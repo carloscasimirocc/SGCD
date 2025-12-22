@@ -1,0 +1,25 @@
+<h2>Histórico de Pagamentos</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Valor</th>
+      <th>Método</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in pagamentos %}
+    <tr>
+      <td>{{ p.data.strftime('%d/%m/%Y') }}</td>
+      <td>{{ p.valor }} Kz</td>
+      <td>{{ p.metodo_pagamento }}</td>
+      <td>{{ p.descricao }}</td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="4" class="text-muted">Sem pagamentos registados.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

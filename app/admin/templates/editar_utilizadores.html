@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Editar Utilizador</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.nome.label }}<br>
+        {{ form.nome(size=32) }}
+    </div>
+    <div>
+        {{ form.email.label }}<br>
+        {{ form.email(size=32) }}
+    </div>
+    <div>
+        {{ form.enviar() }}
+    </div>
+</form>
+<a href="{{ url_for('administrador.listar_utilizadores') }}">Voltar</a>
+{% endblock %}

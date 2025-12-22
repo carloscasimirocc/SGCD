@@ -1,0 +1,20 @@
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
+
+.home {
+  padding: $spacing-unit * 2 0;
+
+  &__hero {
+    text-align: center;
+    padding: $spacing-unit * 3 0;
+    background: linear-gradient(135deg, $primary, darken-bg($primary, 20%));
+    color: white;
+    border-radius: $border-radius;
+    margin-bottom: $spacing-unit * 2;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: $spacing-unit;
+    }
+  }
+}

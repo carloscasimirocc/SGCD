@@ -1,0 +1,82 @@
+<!-- app/relatorio/templates/dashboard/_header_logado.html -->
+<header
+  class="bg-white shadow-sm border-bottom fixed-top"
+  style="z-index: 1030"
+>
+  <div class="container-fluid px-4">
+    <nav class="navbar navbar-expand-lg py-3">
+      <!-- LOGO -->
+      <a
+        href="{{ url_for('publico.index') }}"
+        class="navbar-brand fw-bold text-primary fs-3"
+      >
+        Decifer
+      </a>
+
+      <!-- MENU PRINCIPAL (SEM Contactos) -->
+      <div class="collapse navbar-collapse" id="navbarLogado">
+        <ul class="navbar-nav me-auto gap-4">
+          <li>
+            <a href="{{ url_for('publico.index') }}" class="nav-link fw-medium"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ url_for('publico.desporto') }}"
+              class="nav-link fw-medium"
+              >Desporto</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ url_for('publico.restaurante') }}"
+              class="nav-link fw-medium"
+              >Restaurante</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('publico.hotel') }}" class="nav-link fw-medium"
+              >Hotel</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ url_for('publico.eventos') }}"
+              class="nav-link fw-medium"
+              >Eventos</a
+            >
+          </li>
+        </ul>
+
+        <!-- USER + SAIR (SUBSTITUI O BOTÃO ENTRAR) -->
+        <div class="d-flex align-items-center gap-4">
+          <div class="text-end">
+            <div class="fw-bold text-dark">
+              Olá, {{ current_user.nome.split()[0] }}!
+            </div>
+            <small class="text-muted"
+              >{{ current_user.perfil.value|title }}</small
+            >
+          </div>
+          <a
+            href="{{ url_for('autenticacao.logout') }}"
+            class="btn btn-outline-danger rounded-pill px-4 fw-semibold"
+          >
+            Sair
+          </a>
+        </div>
+      </div>
+
+      <!-- HAMBURGUER (abre sidebar) -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#dashboardSidebar"
+      >
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </nav>
+  </div>
+</header>

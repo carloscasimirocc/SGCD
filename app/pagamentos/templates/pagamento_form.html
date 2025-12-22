@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-4">
+  <h3>Concluir Pagamento</h3>
+  <form
+    action="{{ url_for('pagamentos.concluir_pagamento') }}"
+    method="POST"
+    class="p-4 border rounded"
+  >
+    <div class="mb-3">
+      <label for="tipo_servico" class="form-label">Serviço</label>
+      <select
+        class="form-select"
+        name="tipo_servico"
+        id="tipo_servico"
+        required
+      >
+        <option value="">Selecione...</option>
+        <option value="matricula">Matrícula</option>
+        <option value="mensalidade">Mensalidade</option>
+        <option value="aluguer_campo">Aluguer de Campo</option>
+        <option value="hospedagem">Hospedagem</option>
+        <option value="piscina_balneario">Piscina / Balneário</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="valor" class="form-label">Valor (KWZ)</label>
+      <input
+        type="number"
+        class="form-control"
+        name="valor"
+        id="valor"
+        min="0"
+        step="0.01"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="metodo" class="form-label">Método de Pagamento</label>
+      <select class="form-select" name="metodo" id="metodo">
+        <option value="dinheiro">Dinheiro</option>
+        <option value="transferencia">Transferência</option>
+        <option value="cartao">Cartão</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Concluir Pagamento</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block title %}Hotel - Decifer{% endblock %} {%
+block content %}
+<!-- HERO -->
+<section class="hotel__hero">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/hotel/slide1.jpg') }}"
+          alt="Quarto"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/hotel/slide2.jpg') }}"
+          alt="Piscina"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="{{ url_for('publico.static', filename='imagens/hotel/slide3.jpg') }}"
+          alt="Lobby"
+        />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="hotel__cards">
+  <div class="container">
+    <h2 class="section-title">Alojamento de Excelência</h2>
+    <p class="section-subtitle">Conforto, luxo e serviço 5 estrelas</p>
+    <div class="cards-grid">
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/hotel/quarto1.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Quarto Deluxe</h3>
+          <p>Vista para o mar e varanda privativa</p>
+          <ul>
+            <li>Wi-Fi grátis</li>
+            <li>Cama King</li>
+            <li>Serviço de quarto 24h</li>
+          </ul>
+          <a href="/reserva" class="btn btn--outline">Reservar</a>
+        </div>
+      </div>
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/hotel/suite.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Suite Presidencial</h3>
+          <p>Luxo absoluto com sala de estar</p>
+          <ul>
+            <li>Jacuzzi</li>
+            <li>Mordomo</li>
+            <li>Check-in VIP</li>
+          </ul>
+          <a href="/reserva" class="btn btn--outline">Reservar</a>
+        </div>
+      </div>
+      <div
+        class="card-item"
+        style="background-image: url('{{ url_for('publico.static', filename='imagens/hotel/piscina.jpg') }}');"
+      >
+        <div class="card-overlay">
+          <h3>Pacote Família</h3>
+          <p>Quarto duplo + atividades para crianças</p>
+          <ul>
+            <li>2 quartos</li>
+            <li>Piscina infantil</li>
+            <li>Refeições inclusas</li>
+          </ul>
+          <a href="/reserva" class="btn btn--outline">Reservar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="hotel__galeria">
+  <div class="container">
+    <h2 class="section-title">Galeria</h2>
+    <div class="galeria-grid">
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/hotel1.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/hotel2.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/hotel3.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/hotel4.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/hotel5.jpg') }}"
+        alt=""
+      />
+      <img
+        src="{{ url_for('publico.static', filename='imagens/galeria/hotel6.jpg') }}"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+{% endblock %} {% block scripts %} ... (mesmo Swiper) {% endblock %}

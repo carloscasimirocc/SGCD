@@ -1,0 +1,37 @@
+// 7-1 Pattern - Import order matters!
+
+// 1. Vendors
+// @use 'vendors/normalize';
+
+// 2. Utils
+@use 'utils/variables';
+@use 'utils/mixins';
+@use 'utils/typography';
+@use 'utils/base';
+
+// 3. Base
+
+// 4. Layout
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+
+// 5. Components
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/_alerts';
+
+// 6. Pages
+@use 'pages/home';
+@use 'pages/desporto';
+@use 'pages/hotel';
+@use 'pages/eventos';
+@use 'pages/restaurante';
+@use 'pages/contactos';
+@use 'pages/login';
+@use 'pages/dashboard';
+
+
+
+// 7. Themes
+// @use 'themes/dark'; // Activa quando quiser

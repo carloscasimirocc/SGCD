@@ -1,0 +1,51 @@
+# Ambiente virtual
+venv/
+ENV/
+env/
+.venv/
+
+# Configurações do VSCode
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente (não versionar senhas, tokens...)
+*.env
+instance/
+
+# Cache e arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de log
+*.log
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
+
+# Arquivos de testes temporários
+coverage/
+htmlcov/
+.tox/
+.noseids
+.cache/
+.pytest_cache/
+.testmondata
+
+# Compilados ou pacotes
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# Arquivos de banco de dados
+*.sqlite3
+
+# dependência Node.js
+node_modules/

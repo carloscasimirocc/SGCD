@@ -1,0 +1,71 @@
+<!-- app/relatorio/templates/dashboard/base_dashboard.html -->
+{% extends "base.html" %} {% block header %} {% include
+'dashboard/_header_logado.html' %} {% endblock %} {% block content %}
+<div class="dashboard-wrapper d-flex">
+  <aside
+    class="sidebar offcanvas offcanvas-start bg-white border-end shadow-sm"
+    id="dashboardSidebar"
+    tabindex="-1"
+  >
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-primary">Menu Dashboard</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+      ></button>
+    </div>
+    <div class="offcanvas-body p-4">
+      <nav class="nav flex-column gap-2">
+        <a
+          href="{{ url_for('relatorio.index') }}"
+          class="nav-link px-3 py-2 rounded {% if request.endpoint == 'relatorio.dashboard_index' %}active bg-primary text-white{% endif %}"
+        >
+          Início
+        </a>
+        <a href="#" class="nav-link px-3 py-2">Presenças</a>
+        <a href="#" class="nav-link px-3 py-2">Horário</a>
+        <a href="#" class="nav-link px-3 py-2">Perfil</a>
+        <!-- REMOVIDO O "Sair" DO SIDEBAR -->
+      </nav>
+    </div>
+  </aside>
+
+  <main class="flex-grow-1 bg-light">
+    <div class="container-fluid p-5">
+      <h1 class="display-5 fw-bold text-dark">
+        Bem-vindo, {{ current_user.nome.split()[0] }}!
+      </h1>
+      <p class="lead text-muted">
+        {{ current_user.perfil.value|title }} • Hoje, 12 de Novembro de 2025
+      </p>
+      <hr />
+      {% block dashboard_content %}{% endblock %}
+    </div>
+  </main>
+</div>
+{% endblock %} {% block styles %}
+<style>
+  #dashboardSidebar {
+    top: 76px !important;
+    height: calc(100vh - 76px) !important;
+    width: 280px !important;
+    position: fixed !important;
+    z-index: 1020 !important;
+  }
+  main {
+    margin-left: 280px !important;
+    margin-top: 76px !important;
+  }
+  @media (max-width: 992px) {
+    main {
+      margin-left: 0 !important;
+    }
+  }
+  .nav-link.active {
+    background: #1976d2 !important;
+    color: white !important;
+    font-weight: 600;
+  }
+</style>
+{% endblock %}

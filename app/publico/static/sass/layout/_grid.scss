@@ -1,0 +1,27 @@
+@use 'sass:math';
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: math.div(-1 * $spacing-unit , 2);
+}
+
+.col {
+  padding: math.div($spacing-unit , 2);
+  flex: 1;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 math.percentage(math.div($i , 12));
+    max-width: math.percentage(math.div($i , 12));
+  }
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h2>Fazer Reserva</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.quarto.label }} {{ form.quarto(class="form-select") }}
+    </div>
+    <div class="mb-3">
+      {{ form.data_checkin.label }} {{ form.data_checkin(class="form-control")
+      }}
+    </div>
+    <div class="mb-3">
+      {{ form.data_checkout.label }} {{ form.data_checkout(class="form-control")
+      }}
+    </div>
+    {{ form.submit(class="btn btn-success") }}
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Gestão de Utilizadores</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Perfil</th>
+        <th>Ações</th>
+    </tr>
+    {% for user in utilizadores %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.nome }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.perfil.value }}</td>
+        <td>
+            <a href="{{ url_for('administrador.editar_utilizador', user_id=user.id) }}">Editar</a>
+            <form action="{{ url_for('administrador.remover_utilizador', user_id=user.id) }}" method="post" style="display:inline;">
+                <button type="submit" onclick="return confirm('Tem certeza?')">Remover</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
