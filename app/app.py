@@ -1,6 +1,6 @@
 from flask import Flask
 from config import config
-from app.extensions import db, ma, migrate, jwt,  login_manager, admin, mail
+from app.extensions import db, ma, migrate, jwt, login_manager, admin, mail
 from app.autenticacao.routes import autenticacao_bp
 from app.publico.routes import publico_bp
 from app.relatorios.routes import relatorio_bp
@@ -10,8 +10,6 @@ from datetime import datetime
 
 
 # Criação da aplicação Flask
-
-
 def create_app(config_name='desenvolvimento'):
     'Criar a aplicação Flask no modo desenvolvimento'
 
