@@ -47,5 +47,8 @@ build/
 # Arquivos de banco de dados
 *.sqlite3
 
-# dependência Node.js
+# Dependência Node.js
 node_modules/
+
+# Arquivos do Alembic
+alembic.ini
